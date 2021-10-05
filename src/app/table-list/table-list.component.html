@@ -1,0 +1,68 @@
+<div class="main-content">
+  <div class="container-fluid">
+      <div class="row">
+          <div class="col-md-12">
+              <div class="card">
+                  <div class="card-header card-header-danger">
+                      <h4 class="card-title ">Listado de vehículos</h4>
+                  </div>
+                  <div class="card-body">
+                      <div class="table-responsive">
+                          <table class="table">
+                              <thead class="text-primary">
+                                  <th>
+                                      Clave
+                                  </th>
+                                  <th>
+                                      Tipo
+                                  </th>
+                                  <th>
+                                      Vel Max
+                                  </th>
+                                  <th>
+                                      Vel Min
+                                  </th>
+                                  <th>
+                                      Conductor
+                                  </th>
+                                  <th>
+                                      Fecha Inicio
+                                  </th>
+                                  <th>
+                                      Fecha Fin
+                                  </th>
+                                  <th>
+                                      Ubicación
+                                  </th>
+                                  <th>
+                                      Acciones
+                                  </th>
+                              </thead>
+                              <tbody>
+                                  <tr *ngFor="let v of vehiculos">
+                                      <td>{{v.clave}}</td>
+                                      <td>{{v.tipo}}</td>
+                                      <td>{{v.velmax}}</td>
+                                      <td>{{v.velmin}}</td>
+                                      <td>{{v.conductor}}</td>
+                                      <td>{{v.inicio_uso}}</td>
+                                      <td>{{v.fin_uso}}</td>
+                                      <td>{{v.ubicacion}}</td>
+                                      <td>
+                                        <button mat-raised-button type="button" routerLink="/user-profile/{{v.id}}" matTooltip="Editar" [matTooltipPosition]="'above'" class="btn btn-primary btn-link btn-sm btn-just-icon">
+                                            <i class="material-icons">edit</i>
+                                        </button>
+                                        <button mat-raised-button type="button" (click)="eliminarVehiculo(v.id)" matTooltip="Eliminar" [matTooltipPosition]="'above'" class="btn btn-danger btn-link btn-sm btn-just-icon">
+                                            <i class="material-icons">close</i>
+                                        </button>
+                                      </td>
+                                  </tr>
+                              </tbody>
+                          </table>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
